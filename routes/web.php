@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('request_otp',[App\Http\Controllers\RequestOtpController::class,'requestOtp']);
