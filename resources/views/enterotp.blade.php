@@ -9,12 +9,17 @@
            <form action="{{url('send_otp')}}" method="post">
             @csrf
             <label for="exampleFormControlInput1" class="form-label">OTP</label>
-            <input name="otp" min="1000000" max="999999" value="{{old('otp')}}" type="number" class="form-control  @error('otp') is-invalid @enderror form-control-lg" id="exampleFormControlInput1" placeholder="100996">
+            <input name="otp" min="100000" max="999999" value="{{old('otp')}}" type="number" class="form-control  @error('otp') is-invalid @enderror form-control-lg" id="exampleFormControlInput1" placeholder="######">
             @error('otp')
             <span class="text-danger"><b>{{$message}}</b></span>
             @enderror
           </div>
-          <input class="btn btn-success btn-lg mb-3" type="submit" value="Submit">
+         <div class="container">
+            <div class="row">
+                <input class="btn btn-success btn-lg mb-3" type="submit" value="Submit">
+                <a href="{{url('/')}}">Request another</a>
+             </div>
+         </div>
            </form>
         </div>
     </div>

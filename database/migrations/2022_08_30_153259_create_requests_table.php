@@ -19,6 +19,7 @@ class CreateRequestsTable extends Migration
             $table->boolean('is_valid')->default(true);
             $table->string('expires_in')->default(date("m/d/Y h:i:s a",strtotime("+30 seconds")));
             $table->foreignId('requester_id')->references('id')->on('requesters')->onDelete('cascade');
+            $table->unsignedBigInteger('current_requests_count')->default(0);
             $table->timestamps();
         });
     }

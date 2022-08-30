@@ -13,4 +13,8 @@ class Requester extends Model
     public function requests(){
         return $this->hasMany(Request::class);
     }
+
+    public function lastRequest(){
+        return $this->hasOne(Request::class)->latest();
+    }
 }
