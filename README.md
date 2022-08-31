@@ -1,3 +1,23 @@
+# Running the project
+## after installing all the dependencies, cd into _devmailserver and run the server for emails, visit localhost:8080.
+
+### for dev purposes create a sqlite database, cd into database and touch database.sqlite
+
+#### run the server, php artisan serve and the migrations, php artisan migrate
+
+![Screenshot](Capture.PNG)
+![Screenshot](Capture2.PNG)
+![Screenshot](Capture3.PNG)
+![Screenshot](Capture4.PNG)
+![Screenshot](Capture5.PNG)
+![Screenshot](Capture6.PNG)
+![Screenshot](Capture7.PNG)
+![Screenshot](Capture8.PNG)
+![Screenshot](Capture9.PNG)
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::post('request_otp',[App\Http\Controllers\RequestOtpController::class,'requestOtp']);
 Route::get('send_otp/{email}',[App\Http\Controllers\RequestOtpController::class,'otp']);
-Route::post('send_otp',[App\Http\Controllers\RequestOtpController::class,'sendOtp']);
+Route::post('send_otp/{email}',[App\Http\Controllers\RequestOtpController::class,'sendOtp']);

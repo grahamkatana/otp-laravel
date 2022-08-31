@@ -31,11 +31,21 @@ class Checkotp implements Rule
         if(!$check){
             return false;
         }
-        $check_hours = date("m/d/Y h:i:s a")-$check->expires_in;
-        dd($check_hours);
-        // if($check_hours>1){
-
-        // }
+        $current_time = strtotime(date("m/d/Y h:i:s a"));
+        $record_time = strtotime($check->expires_in);
+        $time_span = $current_time - $record_time;
+        $minutes = $time_span / 60;
+        if($minutes > getenv("OTP_MINUTES")[1]){
+            return false;
+        }
+        if($check->current_requests_count==getenv("OTP_MAX_REQUESTS")){
+            return false;
+        }
+        if(!$check->is_valid){
+            return false;
+        }
+        return true;
+      
 
     }
 
@@ -46,6 +56,6 @@ class Checkotp implements Rule
      */
     public function message()
     {
-        return 'The otp is not valid,please request another.';
+        return 'The otp is not valid,please request another one.';
     }
 }
